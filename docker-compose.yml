@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./ai_refactor_assistant
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./ai_refactor_assistant/.env
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:80" # Map our computer's port 5173 to the container's port 80
+    depends_on:
+      - backend
