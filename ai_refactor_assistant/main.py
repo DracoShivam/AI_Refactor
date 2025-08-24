@@ -19,7 +19,8 @@ app = FastAPI()
 
 # --- New CORS Middleware Block ---
 origins = [
-    "http://localhost:5173", # The address of our React app
+    "http://localhost:5173",
+    "https://ai-refactor-pi.vercel.app/" # The address of our React app
 ]
 
 app.add_middleware(
